@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All the Best, Baby! 💖</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: linear-gradient(135deg, #ffe4f0, #d0f0fd);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      overflow: hidden;
+      color: #ff4d6d;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 50px 35px;
+      border-radius: 30px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      max-width: 450px;
+      animation: float 4s ease-in-out infinite;
+      z-index: 10;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 2.6em;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+
+    p {
+      font-size: 1.3em;
+      line-height: 1.6em;
+      color: #ff4d6d;
+    }
+
+    .heart {
+      color: #ff4d6d;
+      animation: heartbeat 1.2s infinite;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.5); }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+
+    .star, .confetti {
+      position: absolute;
+      border-radius: 50%;
+      animation: floatStars 3s infinite linear;
+    }
+
+    @keyframes floatStars {
+      0% { transform: translateY(0); opacity: 1; }
+      50% { opacity: 0.6; }
+      100% { transform: translateY(-100vh); opacity: 0; }
+    }
+
+    .confetti {
+      width: 8px;
+      height: 8px;
+      background-color: #ff4d6d;
+      border-radius: 0;
+      animation: fall 4s infinite linear;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(-10px) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>All the Best, Baby! <span class="heart">💖</span></h1>
+    <p>
+      You’ve got this! 🌟<br>
+      I believe in you and I know you'll shine ❤️<br>
+      Sending you all my love, luck, and courage!
+    </p>
+  </div>
+
+  <script>
+    // Stars for magical effect
+    for (let i = 0; i < 60; i++) {
+      const star = document.createElement('div');
+      star.classList.add('star');
+      star.style.width = star.style.height = Math.random() * 3 + 1 + 'px';
+      star.style.top = Math.random() * 100 + 'vh';
+      star.style.left = Math.random() * 100 + 'vw';
+      star.style.background = 'white';
+      document.body.appendChild(star);
+    }
+
+    // Confetti for clapping/cheering vibe
+    for (let i = 0; i < 50; i++) {
+      const confetti = document.createElement('div');
+      confetti.classList.add('confetti');
+      confetti.style.background = ['#ff4d6d','#ffd700','#ff69b4','#ff7f50','#87cefa'][Math.floor(Math.random()*5)];
+      confetti.style.left = Math.random() * 100 + 'vw';
+      confetti.style.top = Math.random() * 100 + 'vh';
+      confetti.style.width = confetti.style.height = Math.random() * 8 + 4 + 'px';
+      document.body.appendChild(confetti);
+    }
+  </script>
+</body>
+</html>
